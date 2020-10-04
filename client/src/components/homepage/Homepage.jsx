@@ -1,4 +1,8 @@
 import React from "react";
+import Logo from "./BMM_Logo.png";
+import Register from "./register.svg";
+import Match from "./match.svg";
+import Pick from "./pick.svg";
 
 import { makeStyles } from "@material-ui/core";
 import homepageStyleSheet from "./homepageStyles";
@@ -12,47 +16,61 @@ function Homepage() {
   return (
     <div className={classes.page}>
       <div className={classes.description}>
-        <p>
-          Business Mentor Matchmaker is here to help startups by matching them with mentors that
-          they need specific help in. Whether it be in finance, inventory, or
-          just questions in the industry.{" "}
-        </p>
+        <div>
+          {" "}
+          <h1> Business Mentor Matchmaker</h1>
+          <p>
+            is here to help startups by matching them with mentors that they
+            need specific help in.
+            <br></br>
+            Whether it be in finance, inventory, or just questions in the
+            industry.
+          </p>
+        </div>
+
+        <img src={Logo} alt="Logo" />
       </div>
       <div className={classes.info}>
-        <h2> How it Works</h2>
+        <h1> How it Works</h1>
+        <p>Register your Business</p>
         <div className={classes.business}>
-          <p>Register your Business</p>
           <div className={classes.instructions}>
             {" "}
             <div>
               {" "}
+              <img src={Register} alt="Register" />
               <p>Create your business profile.</p>
             </div>
             <div>
               {" "}
+              <img src={Match} alt="Match" />
               <p>We will match you to mentors that can help.</p>
             </div>
             <div>
               {" "}
+              <img src={Pick} alt="Pick" />
               <p>Or you can pick your own mentor.</p>
             </div>
           </div>
         </div>
 
+        <p>Register as a Mentor</p>
         <div className={classes.mentor}>
-          <p>Register as a Mentor</p>
           <div className={classes.instructions}>
             {" "}
             <div>
               {" "}
+              <img src={Register} alt="Register" />
               <p>Create your mentor profile. </p>
             </div>
             <div>
               {" "}
+              <img src={Match} alt="Match" />
               <p>We will match you to businesses that need your help.</p>
             </div>
             <div>
               {" "}
+              <img src={Pick} alt="Pick" />
               <p>Or you can pick the business to help.</p>
             </div>
           </div>
