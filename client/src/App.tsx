@@ -1,6 +1,7 @@
 import React from "react";
 // import Navbar from "./components/navbar/Navbar";
 import Login from "./components/sign-in/SignIn";
+import Register from "./components/mentor-signup/MentorSignup";
 import Main from "./components/Main";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Homepage from "./components/homepage/Homepage";
@@ -17,6 +18,7 @@ function App() {
             {/* <Main /> */}
             <Route exact path="/" component={Homepage}></Route>
             <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
           </Switch>
         </Router>
       </Provider>
