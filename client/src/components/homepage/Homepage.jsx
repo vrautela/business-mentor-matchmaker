@@ -16,7 +16,6 @@ function Homepage() {
 
   return (
     <div className={classes.page}>
-      <Navbar />
       <div className={classes.description}>
         <div>
           {" "}
