@@ -1,5 +1,3 @@
-
-
 const NavbarStyleSheet = {
   nav: {
     fontFamily: "Nunito",
@@ -17,7 +15,7 @@ const NavbarStyleSheet = {
       padding: "8px 15px",
       textDecoration: "none",
       fontWeight: "bold",
-    }
+    },
   },
   companyName: {
     float: "left",
@@ -25,7 +23,7 @@ const NavbarStyleSheet = {
     textDecoration: "none",
     fontWeight: "bold",
     color: "white",
-  }
+  },
 };
 
 export default NavbarStyleSheet;

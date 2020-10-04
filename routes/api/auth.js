@@ -54,8 +54,12 @@ router.post(
       const payload = {
         user: {
           id: user.id,
+          mentor: user.mentor,
+          business: user.business,
         },
       };
+
+      console.log(payload);
 
       jwt.sign(
         payload,

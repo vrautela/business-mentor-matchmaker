@@ -30,31 +30,24 @@ const businessSchema = new mongoose.Schema({
     {
       webdev: {
         type: Boolean,
-        required: true,
       },
       finance: {
         type: Boolean,
-        required: true,
       },
       support: {
         type: Boolean,
-        required: true,
       },
       organization: {
         type: Boolean,
-        required: true,
       },
       analytics: {
         type: Boolean,
-        required: true,
       },
       planning: {
         type: Boolean,
-        required: true,
       },
       marketing: {
         type: Boolean,
-        required: true,
       },
     },
   ],
