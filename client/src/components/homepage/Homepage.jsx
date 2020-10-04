@@ -3,6 +3,7 @@ import Logo from "./BMM_Logo.png";
 import Register from "./register.svg";
 import Match from "./match.svg";
 import Pick from "./pick.svg";
+import Navbar from "../navbar/Navbar.jsx";
 
 import { makeStyles } from "@material-ui/core";
 import homepageStyleSheet from "./homepageStyles";
@@ -15,6 +16,7 @@ function Homepage() {
 
   return (
     <div className={classes.page}>
+      <Navbar />
       <div className={classes.description}>
         <div>
           {" "}

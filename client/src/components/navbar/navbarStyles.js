@@ -1,29 +1,25 @@
-const NavbarStyleSheet = {
+const navbarStyleSheet = {
   nav: {
-    fontFamily: "Nunito",
-    width: "100%",
-    float: "left",
-    margin: "0 0 3em 0",
-    padding: "0",
-    listStyle: "none",
-    backgroundColor: "#57D0C0",
-  },
-  pageLinks: {
-    float: "right",
-    "& a": {
-      display: "block",
-      padding: "8px 15px",
-      textDecoration: "none",
-      fontWeight: "bold",
+    backgroundColor: "#2EC1AC",
+    height: "80px",
+    display: "flex",
+    paddingTop: "20px",
+    "& h3": {
+      "& a": {
+        color: "white",
+        textDecoration: "none",
+      },
+      marginLeft: "20px",
+      paddingRight: "600px",
     },
-  },
-  companyName: {
-    float: "left",
-    padding: "8px 15px",
-    textDecoration: "none",
-    fontWeight: "bold",
-    color: "white",
+    "& p": {
+      marginLeft: "50px",
+      "& a": {
+        color: "black",
+        textDecoration: "none",
+      },
+    },
   },
 };
 
-export default NavbarStyleSheet;
+export default navbarStyleSheet;
