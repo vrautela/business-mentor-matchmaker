@@ -1,6 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
 // import Navbar from "./components/navbar/Navbar";
 import Login from "./components/sign-in/SignIn";
 import Main from "./components/Main";
@@ -11,7 +9,7 @@ import store from "./store";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Provider store={store}>
         <Router>
           {/* <Navbar /> */}
