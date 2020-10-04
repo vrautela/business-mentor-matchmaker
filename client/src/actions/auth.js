@@ -3,7 +3,8 @@ import { setAlert } from "./alert";
 import {
   REGISTER_FAIL,
   REGISTER_SUCCESS,
-  USER_LOADED,
+  MENTOR_USER_LOADED,
+  BUSINESS_USER_LOADED,
   AUTH_ERROR,
   LOGIN_FAIL,
   LOGIN_SUCCESS,
@@ -21,11 +22,18 @@ export const loadUser = () => async (dispatch) => {
 
   try {
     const res = await axios.get("/api/auth");
-
-    dispatch({
-      type: USER_LOADED,
-      payload: res.data,
-    });
+    console.log(res.data.mentor);
+    if (res.data.mentor) {
+      dispatch({
+        type: MENTOR_USER_LOADED,
+        payload: res.data,
+      });
+    } else {
+      dispatch({
+        type: BUSINESS_USER_LOADED,
+        payload: res.data,
+      });
+    }
   } catch (err) {
     dispatch({
       type: AUTH_ERROR,
@@ -79,8 +87,6 @@ export const login = (email, password) => async (dispatch) => {
 
   try {
     const res = await axios.post("/api/auth", body, config);
-
-    console.log(res.data);
 
     dispatch({
       type: LOGIN_SUCCESS,

@@ -9,7 +9,7 @@ document.body.style.background = "#3E978B";
 
 const useStyles = makeStyles(signinStyleSheet);
 
-const Signin = ({ login, isAuthenticated }) => {
+const Signin = ({ login, isAuthenticated, business, mentor }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -28,24 +28,46 @@ const Signin = ({ login, isAuthenticated }) => {
     login(email, password);
   };
 
-  // if(isAuthenticated) {
-  //   return <Redirect to="/"
-  // }
+  if (isAuthenticated && business) {
+    return <Redirect to="/businessprofile" />;
+  } else if (isAuthenticated && mentor) {
+    return <Redirect to="/mentorprofile" />;
+  }
   return (
     <Fragment>
       <div className={classes.page}>
         <div className={classes.box}>
           <div className={classes.title}>Sign In</div>
-          <div className={classes.info}>
-            <input placeholder="Email" type="text"></input>
-            <input placeholder="Password" type="text"></input>
-          </div>
-          <div className={classes.register}>
-            {" "}
-            <button type="submit" onClick={(e) => onSubmit(e)}>
-              Sign In
-            </button>
-          </div>
+          <form onSubmit={(e) => onSubmit(e)}>
+            <div className={classes.info}>
+              <div>
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  name="email"
+                  value={email}
+                  onChange={(e) => onChange(e)}
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  value={password}
+                  onChange={(e) => onChange(e)}
+                  minLength="6"
+                />
+              </div>
+            </div>
+            <div className={classes.register}>
+              {" "}
+              <button type="submit" onClick={(e) => onSubmit(e)}>
+                Sign In
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </Fragment>
@@ -55,10 +77,14 @@ const Signin = ({ login, isAuthenticated }) => {
 Signin.propTypes = {
   login: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool,
+  business: PropTypes.bool,
+  mentor: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
+  business: state.auth.business,
+  mentor: state.auth.mentor,
 });
 
 export default connect(mapStateToProps, { login })(Signin);
